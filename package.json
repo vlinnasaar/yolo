@@ -2,14 +2,13 @@
   "name": "yolo",
   "version": "1.0.0",
   "description": "yolo test assignment",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "knockout": "^3.5.1",
     "typescript": "^5.6.3"
   }
 }
