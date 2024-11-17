@@ -7,12 +7,12 @@ let init: any = {
 			method: "POST",
 		}).then((response) => response.json()).then((data) => {init.countries = data;cb();});
 	},
-	createTable: (data:any) => {		
+	createTableRows: (data:any) => {		
 		let table:string = "";
 		data.forEach((element) => {
 			table =  table + "<tr><td>" + element.capital + "</td><td>" + element.currency + "</td></tr>";
 		});
-		document.getElementById("table")!.innerHTML = " <table width=\"600px\"><thead><tr><th width=\"300px\">Capital</th><th width=\"300px\">Currency</th></tr></thead><tbody>" + table + "</tbody></table>"
+		document.querySelectorAll("#table tbody")[0]!.innerHTML = table
 	},
 	filterByCurrency: (text, data, cb) => {
 		let filteredData:string[] = (text == "") ? data.data.name : data.data.name.filter(item => {			
@@ -24,7 +24,7 @@ let init: any = {
 	},
 	start: () => {
 		init.getCountries(() => {
-			init.createTable(init.countries.data.name);
+			init.createTableRows(init.countries.data.name);
 		});
 	} 
 };

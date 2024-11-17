@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Yolo test assigment</title>
-	<style>		
-		table, th, td {
-			border: 1px solid black;
-			text-align: left;
-		}		
-	</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yolo test assigment</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: left;
+      }
+    </style>
     <script src="main.js"></script>
-
   </head>
   <body>
     <input
       type="text"
       placeholder="Filter by currency"
-      onkeyup="init.filterByCurrency(this.value, init.countries, (filteredData) => init.createTable(filteredData))"
+      onkeyup="init.filterByCurrency(this.value, init.countries, (filteredData) => init.createTableRows(filteredData))"
     />
-    <div id="table">Loading...</div>
+    <div id="table">
+      <table width="600px">
+        <thead>
+          <tr>
+            <th width="300px">Capital</th>
+            <th width="300px">Currency</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </body>
 </html>
